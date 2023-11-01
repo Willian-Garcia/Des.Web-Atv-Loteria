@@ -1,9 +1,10 @@
 import { Provider } from "./contexts";
+import Principal from "./pages/Principal";
 
 function App() {
   return (
     <Provider>
-      oi
+      <Principal />
     </Provider>
   );
 }
