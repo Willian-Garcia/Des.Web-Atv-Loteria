@@ -17,51 +17,51 @@ export default function Lotofacil() {
   }
 
   return (
-    <div className="loto-bloco-principal">
+    <div className="lotofacil-bloco-principal">
       <div>
-        <div className="loto-bloco-loteria">
-          <img src={trevo} alt="Megasena" />
-          <span className="loto-nome-loteria">MEGA-SENA</span>
+        <div className="lotofacil-bloco-loteria">
+          <img src={trevo} alt="Lotofacil" />
+          <span className="lotofacil-nome-loteria">MEGA-SENA</span>
         </div>
-        <div className="loto-bloco-estimativa">
-          <div className="loto-texto-estimativa">
+        <div className="lotofacil-bloco-estimativa">
+          <div className="lotofacil-texto-estimativa">
             Estimativa de prêmio do próximo concurso. Sorteio em{" "}
             {lotofacil.dataApuracao}
           </div>
-          <div className="loto-valor-estimativa">{lotofacil.valorEstimadoProximoConcurso.toLocaleString("pt-br",{
+          <div className="lotofacil-valor-estimativa">{lotofacil.valorEstimadoProximoConcurso.toLocaleString("pt-br",{
             style:"currency",
             currency:"brl"
           })}</div>
         </div>
       </div>
-      <div className="loto-bloco-direita">
-        <div className="loto-linha-bola">
+      <div className="lotofacil-bloco-direita">
+        <div className="lotofacil-linha-bola">
             {
                 um.map(
-                    dezena => <div className="loto-bola" key={dezena}>{dezena}</div>
+                    dezena => <div className="lotofacil-bola" key={dezena}>{dezena}</div>
                 )
             }
         </div>
-        <div className="loto-linha-bola">
+        <div className="lotofacil-linha-bola">
             {
                 dois.map(
-                    dezena => <div className="loto-bola" key={dezena}>{dezena}</div>
+                    dezena => <div className="lotofacil-bola" key={dezena}>{dezena}</div>
                 )
             }
         </div>
-        <div className="loto-linha-bola">
+        <div className="lotofacil-linha-bola">
             {
                 tres.map(
-                    dezena => <div className="loto-bola" key={dezena}>{dezena}</div>
+                    dezena => <div className="lotofacil-bola" key={dezena}>{dezena}</div>
                 )
             }
         </div>
-        <div className="loto-texto-acumulou">
+        <div className="lotofacil-texto-acumulou">
             {
                 lotofacil.acumulado ? "ACUMULOU!" : "NÃO ACUMULOU"
             }
         </div>
-        <div className="loto-data-concurso">
+        <div className="lotofacil-data-concurso">
             {
                 `Concurso ${lotofacil.numeroDoConcurso} - ${lotofacil.dataPorExtenso}`
             }
