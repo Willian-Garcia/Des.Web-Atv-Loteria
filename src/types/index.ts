@@ -3,7 +3,7 @@ export interface Props {
     concursoEspecial: boolean;
     dataApuracao: string;
     dataPorExtenso: string;
-    dataProximoConcurso: number;
+    dataProximoConcurso: string;
     dezenas: string[];
     numeroDoConcurso: number;
     quantidadeGanhadores: number;
