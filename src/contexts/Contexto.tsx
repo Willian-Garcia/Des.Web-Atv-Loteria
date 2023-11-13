@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { LoteriaProps, Props } from "../types";
 //import loteria from "../services/Loteria";
 import resultado from "../services/resultado";
+import { mega } from "../styles/theme";
 
 export const Contexto = createContext({} as LoteriaProps);
 
@@ -10,6 +11,7 @@ export function Provider({ children }: any) {
   const [lotofacil, setLotofacil] = useState({} as Props);
   const [quina, setQuina] = useState({} as Props);
   const [ativo, setAtivo] = useState("megasena");
+  const [tema,setTema] = useState(mega);
 
   useEffect(() => {
     (async function () {
@@ -23,7 +25,7 @@ export function Provider({ children }: any) {
   }, []);
 
   return (
-    <Contexto.Provider value={{ megasena, lotofacil , quina , ativo, setAtivo}}>
+    <Contexto.Provider value={{ megasena, lotofacil , quina , ativo, setAtivo, tema, setTema}}>
         {children}
     </Contexto.Provider>
   );
