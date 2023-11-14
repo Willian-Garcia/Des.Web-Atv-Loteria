@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Megasena from "../pages/Megasena";
-import Lotofacil from "../pages/Lotofacil";
 import Quina from "../pages/Quina";
 import "./index.css";
 import Menu from "../components/Menu";
 import { ThemeProvider } from "styled-components";
 import { useLoteria } from "../hooks";
+import Timemania from "../pages/Timemania";
 
 export default function Rotas(){
     const {tema} = useLoteria();
@@ -15,7 +15,7 @@ export default function Rotas(){
             <Menu/>
             <Routes>
                 <Route path = "/megasena" element={<Megasena/>}/>
-                <Route path = "/lotofacil" element={<Lotofacil/>}/>
+                <Route path = "/timemania" element={<Timemania/>}/>
                 <Route path = "/quina" element={<Quina/>}/>
             </Routes>
         </BrowserRouter>

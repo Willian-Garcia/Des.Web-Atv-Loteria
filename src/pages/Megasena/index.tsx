@@ -1,7 +1,6 @@
 import { useLoteria } from "../../hooks";
-import "./index.css";
 import trevo from "../../assets/trevo-megasena.png";
-import { Carregando, Direita, Esquerda, NomeLoteria, Principal, Resultado } from "../../components";
+import { Acumulou, Carregando, Data, Direita, Esquerda, Estimativa, NomeLoteria, Principal, Resultado } from "../../components";
 
 export default function Megasena() {
   const { megasena:sorteio } = useLoteria();
@@ -11,27 +10,14 @@ export default function Megasena() {
         <Principal>
           <Esquerda>
             <NomeLoteria trevo={trevo} nome="MEGA-SENA"/>
-            <div className="mega-bloco-estimativa">
-              <div className="mega-texto-estimativa">
-                Estimativa de prêmio do próximo concurso. Sorteio em{" "}
-                {sorteio.dataApuracao}
-              </div>
-              <div className="mega-valor-estimativa">
-                {sorteio.valorEstimadoProximoConcurso.toLocaleString("pt-br", {
-                  style: "currency",
-                  currency: "brl",
-                })}
-              </div>
-            </div>
+            <Estimativa 
+              dataProximoConcurso={sorteio.dataProximoConcurso} 
+              valorEstimadoProximoConcurso={sorteio.valorEstimadoProximoConcurso}/>
           </Esquerda>
           <Direita>
             <Resultado dezenas={sorteio.dezenas}/>
-            <div className="mega-texto-acumulou">
-              {sorteio.acumulado ? "ACUMULOU!" : "NÃO ACUMULOU"}
-            </div>
-            <div className="mega-data-concurso">
-              {`Concurso ${sorteio.numeroDoConcurso} - ${sorteio.dataPorExtenso}`}
-            </div>
+            <Acumulou quantidadeGanhadores={sorteio.quantidadeGanhadores} />
+            <Data numeroDoConcurso={sorteio.numeroDoConcurso} dataPorExtenso={sorteio.dataPorExtenso}/>
           </Direita>
         </Principal>
       ) : (
